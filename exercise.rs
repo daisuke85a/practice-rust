@@ -17,9 +17,14 @@ enum Age { New, Used }
 // Return tuple with car age ("New" or "Used") and mileage
 fn car_quality (miles: u32) -> (Age, u32) {
 
-    todo!("Add conditional expression: If car has accumulated miles, return tuple for Used car with current mileage");
+    let age:Age;
+    if miles == 0 {
+        age = Age::New;
+    } else {
+        age = Age::Used;
+    }
 
-    todo!("Return tuple for New car with zero miles");
+    return (age, miles);
 }
 
 //////////////////////////////////////////////////
@@ -36,11 +41,19 @@ fn car_factory(color: String, motor: Transmission, roof: bool, miles: u32) -> Ca
     // Show details about car order
     // - Check if order is for Used or New car, then check the roof type 
     // - Print details for New or Used car based on roof type
-    todo!("Add conditional expression: If car is Used age, then check roof type");
-        todo!("Add conditional expression: If roof is a hard top, print details");
-            // Call the `println!` macro to show the car order details
+    if car_quality(miles).0 == Age::Used {
+        if roof {
             println!("Prepare a used car: {:?}, {}, Hard top, {} miles\n", motor, color, miles);  
-
+        } else {
+            println!("Prepare a used car: {:?}, {}, Convertible, {} miles\n", motor, color, miles);  
+        }
+    } else {
+        if roof {
+            println!("Building a new car: {:?}, {}, Hard top, {} miles\n", motor, color, miles);  
+        } else {
+            println!("Building a new car: {:?}, {}, Convertible, {} miles\n", motor, color, miles);  
+        }        
+    }
     // Create a new "Car" instance as requested
     // - Bind first three fields to values of input arguments
     // - Bind "age" to tuple returned from car_quality(miles)
