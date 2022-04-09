@@ -1,0 +1,5 @@
+# develop
+
+```zsh
+$cargo run
+```
