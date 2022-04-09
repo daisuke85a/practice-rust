@@ -1,7 +1,6 @@
 fn main() {
-    let number = 3;
+    let condition = true;
+    let number = if condition { 5 } else { 6 };
 
-    if number != 0 {
-        println!("number was something other than zero");
-    }
+    println!("The value of number is: {}", number);
 }
