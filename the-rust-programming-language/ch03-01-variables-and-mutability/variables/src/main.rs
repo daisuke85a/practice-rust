@@ -1,5 +1,8 @@
 fn main() {
-    let x = 2.22222;
-    let y: f32 = 3.333333;
-    println!("The value of x is :{:.3}, y is :{:.3}", x, y);
+    let tup = (500, 6.4, 1);
+    let (x, y, z) = tup;
+    println!(
+        "The value of x is :{:.3}, y is :{:.3}, z is :{:.3}",
+        x, y, z
+    );
 }
