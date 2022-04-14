@@ -7,6 +7,12 @@ fn main() {
     };
 
     user1.email = String::from("anotheremail@example.com");
+
+    let user2 = User {
+        email: String::from("another@example.com"),
+        username: String::from("anotherusername567"),
+        ..user1
+    };
 }
 
 fn build_user(email: String, username: String) -> User {
